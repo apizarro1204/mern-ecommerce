@@ -1,11 +1,14 @@
 import React, { Fragment } from "react";
 import Layout from "../layout";
+import ContactForm from "./contactForm";
 
 const ContactUsComponent = (props) => {
     return (
+        <Fragment>
         <div className="flex flex-col items-center justify-center my-32">
-            <h1>Hola</h1>
+            <ContactForm />
         </div>
+        </Fragment>
     );
 };
 
