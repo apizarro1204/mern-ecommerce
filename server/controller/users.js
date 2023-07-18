@@ -57,8 +57,10 @@ class User {
           phone,
         });
         let save = await newUser.save();
+        console.log(save);
         if (save) {
-          return res.json({ success: "User created successfully" });
+          console.log("save de postAddUser")
+          res.json({ success: "User created successfully" });
         }
       } catch (err) {
         return res.json({ error: error });

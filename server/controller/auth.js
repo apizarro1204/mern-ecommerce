@@ -73,16 +73,17 @@ class Auth {
                 // ========= Here role 1 for admin signup role 0 for customer signup =========
                 userRole: 1, // Field Name change to userRole from role
               });
-              newUser
-                .save()
-                .then((data) => {
-                  return res.json({
-                    success: "Account create successfully. Please login",
-                  });
+              console.log(newUser)
+              try {
+                const data = await newUser.save();
+                console.log("data del postSingUp")
+                console.log(data)
+                return res.json({
+                  success: "Account create successfully. Please login",
                 })
-                .catch((err) => {
-                  console.log(err);
-                });
+              } catch (error) {
+                  console.log("error del postSignUp")
+              }
             }
           } catch (err) {
             console.log(err);

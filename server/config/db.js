@@ -1,11 +1,13 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
+
 try {
-  mongoose.connect("mongodb://localhost:27017/Ecommerce", {
+  mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
   });
-  console.log("Database Connected Successfully");
+  console.log("Database Connected Successfully from db.js");
 } catch (err) {
   console.log("Database Not Connected");
 }
